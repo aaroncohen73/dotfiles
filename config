@@ -166,8 +166,12 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
 bindsym XF86AudioMute exec pactl set-sink-volume 0 0
 
+# Media keys
+bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+bindsym XF86AudioPrev exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+
 # Brightness
-exec redshift
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
@@ -179,7 +183,8 @@ gaps outer 2
 
 # Misc settings
 exec "xset b off"
-exec "feh --bg-scale ~/Pictures/neoncity.jpg"
+exec "feh --bg-fill ~/Pictures/Wallpapers/eeveelutions_fixed.png"
+exec "~/scripts/fixmonitor.sh"
 
 # Lenny face
 bindsym KP_Up exec "xdotool click 1"

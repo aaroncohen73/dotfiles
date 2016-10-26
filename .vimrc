@@ -4,6 +4,10 @@ set nocompatible
 " Run pathogen
 execute pathogen#infect()
 
+" Okay then
+set shortmess=a
+set cmdheight=2
+
 " Syntax highlighting
 filetype plugin on
 filetype indent on
@@ -11,7 +15,7 @@ syntax on
 
 " Highlight trailing WS
 set list
-set listchars=trail:.
+set listchars=trail:.,tab:>>
 
 " Don't highlight trailing WS on current line (Doesn't work for some reason)
 autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
@@ -54,6 +58,10 @@ set noswapfile
 
 " Misc. mappings
 autocmd FileType python inoremap """ """"""<Left><Left><Left>
+autocmd FileType c,cpp,java,php,rust inoremap { {<Enter>}<Esc>kA
+autocmd BufRead,BufNewFile *.blade.php iunmap {
+autocmd VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+autocmd VimLeave * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
 nnoremap _o o<Esc>O
 nnoremap _O O<Esc>o
 nnoremap <Space> i <Esc>r

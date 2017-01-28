@@ -56,12 +56,14 @@ set autowriteall
 " No swapfiles
 set noswapfile
 
+" Tabs instead of spaces for rover code
+autocmd BufRead,BufNewFile */Rover2017/* set noexpandtab
+autocmd BufRead,BufNewFile */Rover2017/* set nolist
+
 " Misc. mappings
 autocmd FileType python inoremap """ """"""<Left><Left><Left>
-autocmd FileType c,cpp,java,php,rust inoremap { {<Enter>}<Esc>kA
+autocmd FileType c,cpp,java,php,rust,lilypond inoremap { {<Enter>}<Esc>kA
 autocmd BufRead,BufNewFile *.blade.php iunmap {
-autocmd VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
-autocmd VimLeave * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
 nnoremap _o o<Esc>O
 nnoremap _O O<Esc>o
 nnoremap <Space> i <Esc>r

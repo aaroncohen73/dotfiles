@@ -1,0 +1,33 @@
+[global_config]
+  handle_size = 5
+  inactive_color_offset = 0.83
+  tab_position = hidden
+  title_hide_sizetext = True
+  title_inactive_bg_color = "#75715e"
+  title_inactive_fg_color = "#f8f8f2"
+  title_transmit_bg_color = "#272822"
+  title_transmit_fg_color = "#f8f8f2"
+  window_state = fullscreen
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = default
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#272822"
+    background_darkness = 0.97
+    background_type = transparent
+    cursor_color = "#f8f8f2"
+    font = Source Code Pro Medium 9
+    foreground_color = "#f8f8f2"
+    palette = "#272822:#f92672:#a6e22e:#f4bf75:#66d9ef:#ae81ff:#a1efe4:#f8f8f2:#75715e:#f92672:#a6e22e:#f4bf75:#66d9ef:#ae81ff:#a1efe4:#f9f8f5"
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False

@@ -4,7 +4,7 @@ set nocompatible
 " Run pathogen
 execute pathogen#infect()
 
-" Okay then
+" Fix bufferline for lots of open buffers
 set shortmess=a
 set cmdheight=2
 
@@ -50,19 +50,26 @@ set shiftwidth=4
 set tabstop=4
 set wrap
 
-" If :q without :w, just write all
+" Save automatically on :q
 set autowriteall
 
 " No swapfiles
 set noswapfile
 
+" Set system clipboard to default copy/paste buffer
+set clipboard=unnamed
+
 " Tabs instead of spaces for rover code
 autocmd BufRead,BufNewFile */Rover2017/* set noexpandtab
 autocmd BufRead,BufNewFile */Rover2017/* set nolist
 
+" Tabs instead of spaces for Sensiplicity code
+autocmd BufRead,BufNewFile */Sensiplicity/* set noexpandtab
+autocmd BufRead,BufNewFile */Sensiplicity/* set nolist
+
 " Misc. mappings
 autocmd FileType python inoremap """ """"""<Left><Left><Left>
-autocmd FileType c,cpp,java,php,rust,lilypond inoremap { {<Enter>}<Esc>kA
+autocmd FileType c,cpp,java,php,rust,lilypond,openscad inoremap { {<Enter>}<Esc>kA
 autocmd BufRead,BufNewFile *.blade.php iunmap {
 nnoremap _o o<Esc>O
 nnoremap _O O<Esc>o

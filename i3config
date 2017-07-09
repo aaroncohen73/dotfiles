@@ -32,6 +32,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec urxvt
 
+# start a terminal in the current terminal's working directory
+bindsym $mod+Shift+Return exec urxvt -cd "`xcwd`"
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -171,6 +174,10 @@ bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer
 bindsym XF86AudioPrev exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
 bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
 
+bindsym KP_Begin exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+bindsym KP_Left exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+bindsym KP_Right exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+
 # Brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
@@ -181,7 +188,9 @@ for_window [class="^.*"] border pixel 1
 # gaps inner 3
 # gaps outer 2
 
+# Screen sleep settings
+exec "xset s noblank; xset s noexpose; xset s 0 0; xset dpms 0 0 0"
+
 # Misc settings
 exec "xset b off"
-exec "xset s off"
-exec "feh --bg-fill ~/Pictures/anime_city_night.jpg"
+exec "feh --bg-fill ~/Pictures/Wallpapers/anime_city_night.jpg"

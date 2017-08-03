@@ -185,11 +185,14 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 # Gaps!
 for_window [class="^.*"] border pixel 1
 # smart_gaps on
-# gaps inner 3
+# gaps inner 1
 # gaps outer 2
 
 # Screen sleep settings
 exec "xset s noblank; xset s noexpose; xset s 0 0; xset dpms 0 0 0"
+
+# Xmodmap
+exec "xmodmap ~/.Xmodmap"
 
 # Misc settings
 exec "xset b off"

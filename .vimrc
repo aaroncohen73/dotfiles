@@ -64,8 +64,14 @@ autocmd BufRead,BufNewFile */Rover2017/* set noexpandtab
 autocmd BufRead,BufNewFile */Rover2017/* set nolist
 
 " Tabs instead of spaces for Sensiplicity code
-autocmd BufRead,BufNewFile */Sensiplicity/* set noexpandtab
-autocmd BufRead,BufNewFile */Sensiplicity/* set nolist
+autocmd BufRead,BufNewFile */sensiplicity/* set noexpandtab
+autocmd BufRead,BufNewFile */sensiplicity/* set nolist
+
+" Tabs instead of spaces for makefiles
+autocmd FileType make set noexpandtab
+autocmd FileType make set nolist
+autocmd FileType make set listchars&
+autocmd FileType make set listchars=trail:.
 
 " Misc. mappings
 autocmd FileType python inoremap """ """"""<Left><Left><Left>

@@ -17,10 +17,16 @@ order += "ethernet _first_"
 order += "volume master"
 order += "battery 0"
 order += "load"
+order += "cpu_temperature 0"
 order += "tztime local"
 
+disk "/" {
+        prefix_type = "decimal"
+        format = "Free: %avail/%total"
+}
+
 wireless _first_ {
-        format_up = "W: (%quality at %essid) %ip"
+        format_up = "W: (%quality at %essid, %bitrate, %frequency) %ip"
         format_down = "W: down"
 }
 
@@ -32,11 +38,13 @@ ethernet _first_ {
 
 volume master {
     format = "♪: %volume"
-    format_muted = "♪: muted (%volume)"
+    #format_muted = "♪: muted (%volume)"
     device = "pulse:0"
 }
 
 battery 0 {
+        last_full_capacity = true
+        hide_seconds = true
         path = "/sys/class/power_supply/BAT0/uevent"
         format = "%status %percentage %remaining"
 }
@@ -46,9 +54,11 @@ tztime local {
 }
 
 load {
-        format = "%1min"
+        format = "L: %1min %5min %15min"
 }
 
-disk "/" {
-        format = "Free: %avail/%total"
+cpu_temperature 0 {
+        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input"
+        format = "T: %degrees °C"
 }
+

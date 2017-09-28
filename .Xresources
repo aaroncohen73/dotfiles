@@ -44,8 +44,8 @@ URxvt.letterSpace: -1
 *.color15:      #ffffff
 
 ! Transparency
-! URxvt.transparent: true
-! URxvt.shading: 10
+URxvt.transparent: true
+URxvt.shading: 20
 
 ! Cursor size?
 Xcursor.size: 16

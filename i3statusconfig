@@ -26,7 +26,7 @@ disk "/" {
 }
 
 wireless _first_ {
-        format_up = "W: (%quality at %essid, %bitrate, %frequency) %ip"
+        format_up = "W: %ip at %essid (%quality, %bitrate, %frequency )"
         format_down = "W: down"
 }
 
@@ -38,7 +38,7 @@ ethernet _first_ {
 
 volume master {
     format = "♪: %volume"
-    #format_muted = "♪: muted (%volume)"
+    format_muted = "♪: muted (%volume)"
     device = "pulse:0"
 }
 
@@ -58,7 +58,7 @@ load {
 }
 
 cpu_temperature 0 {
-        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input"
+        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon*/temp1_input"
         format = "T: %degrees °C"
 }
 

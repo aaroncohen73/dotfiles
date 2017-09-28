@@ -72,6 +72,16 @@ autocmd FileType make set noexpandtab
 autocmd FileType make set nolist
 autocmd FileType make set listchars&
 autocmd FileType make set listchars=trail:.
+autocmd FileType make set shiftwidth=8
+autocmd FileType make set tabstop=8
+
+" Tabs instead of spaces for assembly files
+autocmd BufRead,BufNewFile *.asm set noexpandtab
+autocmd BufRead,BufNewFile *.asm set nolist
+autocmd BufRead,BufNewFile *.asm set listchars&
+autocmd BufRead,BufNewFile *.asm set listchars=trail:.
+autocmd BufRead,BufNewFile *.asm set shiftwidth=8
+autocmd BufRead,BufNewFile *.asm set tabstop=8
 
 " Misc. mappings
 autocmd FileType python inoremap """ """"""<Left><Left><Left>

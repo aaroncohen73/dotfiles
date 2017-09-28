@@ -164,10 +164,11 @@ bar {
 }
 
 # Volume
+exec pactl set-sink-mute 0 0
 exec pactl set-sink-volume 0 0
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
-bindsym XF86AudioMute exec pactl set-sink-volume 0 0
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 
 # Spotify client media keys
 bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
@@ -184,9 +185,9 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 # Gaps!
 for_window [class="^.*"] border pixel 1
-# smart_gaps on
-# gaps inner 1
-# gaps outer 2
+smart_gaps on
+gaps inner 10
+gaps outer 0
 
 # Screen sleep settings
 exec "xset s noblank; xset s noexpose; xset s 0 0; xset dpms 0 0 0"

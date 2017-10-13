@@ -59,14 +59,6 @@ set noswapfile
 " Set system clipboard to default copy/paste buffer
 set clipboard=unnamed
 
-" Tabs instead of spaces for rover code
-autocmd BufRead,BufNewFile */Rover2017/* set noexpandtab
-autocmd BufRead,BufNewFile */Rover2017/* set nolist
-
-" Tabs instead of spaces for Sensiplicity code
-autocmd BufRead,BufNewFile */sensiplicity/* set noexpandtab
-autocmd BufRead,BufNewFile */sensiplicity/* set nolist
-
 " Tabs instead of spaces for makefiles
 autocmd FileType make set noexpandtab
 autocmd FileType make set nolist

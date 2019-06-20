@@ -158,8 +158,8 @@ bindsym $mod+r mode "resize"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Volume
-exec pactl set-sink-mute 0 0
-exec pactl set-sink-volume 0 0
+#exec pactl set-sink-mute 0 0
+#exec pactl set-sink-volume 0 0
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle

@@ -21,6 +21,11 @@ ln -sf $PWD/terminatorconfig ~/.config/terminator/config
 ln -sf $PWD/Xresources ~/.Xresources
 ln -sf $PWD/Xmodmap ~/.Xmodmap
 
+# zsh config
+echo "Installing zsh config..."
+ln -sf $PWD/zshrc ~/.zshrc
+# TODO: Add support for automatically downloading powerlevel9k theme
+
 # Install vim config
 echo "Installing vim config..."
 ln -sf $PWD/vimrc ~/.vimrc
